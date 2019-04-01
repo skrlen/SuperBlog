@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div style="margin-left: 33.3%;">
+		{% if userinfo %}
+		<h1>欢迎{{userinfo}}的到来!</h1>
+		{% endif %}
+		<h1>商品详情页</h1>
+
+		<h2>商品：{{id}} </h2>
+		<div>
+			{{detail}}
+		</div>
+
+		<a href="/list" style=" color: #000000;text-decoration: none;">返回</a>
+		
+		</div>
+	</body>
+</html>

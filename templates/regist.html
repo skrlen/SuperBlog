@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+	<link rel="stylesheet" type="text/css" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+	<script src="../static/js/jqery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		.t1{
+			width: 500px;
+			height: 400px;
+			/* background-color: #5BC0DE; */
+			border: 1px solid #ffffff;
+			margin-left: 12.5%;
+			margin-top: 300px;
+		}
+		.t2{
+			border-radius: 5px;
+		}
+		.t3{
+			color: #ffffff;
+		}
+		.t4{
+			margin-left: 50px;
+			margin-top: 100px;
+		}
+	</style>
+	
+</head>
+<body style="background-image: url(../static/images/th.jpg);">
+	<div class="t1">
+    <form action="/regist" method="post" class="t4">
+    	<h3 class="t3">账号：<input type="text" name="username" class="t2"/><br><br><br></h3>
+		<h3 class="t3">密码：<input type="password" name="password" class="t2"/><br><br></h3>
+    	<input type="submit" value="注册" class="btn btn-default" style="margin-left: 90px;width: 80px; background-color: #337ab7; color: #ffffff;border: 0;" />
+    </form>
+	
+	<a href="/" class="btn btn-default" style="margin-left: 300px;margin-top: -60px; background-color: #337ab7;color: #fff;border: 0;">返回首页</a>
+	</div>
+</body>
+</html>

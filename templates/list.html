@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script src="../static/js/jqery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.list{
+				text-align: center;
+				list-style: none;
+				
+			}
+			.list li a{
+				text-decoration: none;
+				color: #000000;
+			}
+			th{
+				background-color: #999999;
+			}
+		</style>
+
+	</head>
+	<body>
+	<!--{% if userinfo %}-->
+
+	<!--<h1>欢迎：{{userinfo}}</h1>-->
+
+	<!--{%else%}-->
+	<!--<a href="/login">登录</a>-->
+	<!--<a href="/regist">注册</a>-->
+	<!--{% endif %}-->
+	<h1 style="text-align: center">商品列表</h1>
+<table class="table table-bordered" style="width: 1100px;margin:0 auto;margin-top: 100px">
+	<ul class="list">
+        <h1>{{ asd }}</h1>
+    
+        {% if infoarray == '0' %}
+        <h1 style="margin-top: 300px">哎呀呀，暂时没有商品啊！！</h1>
+		<h2>快去添加一个吧！</h2>
+
+        {% else %}
+			<tr><th>编号</th><th>名称</th><th>价格</th><th>修改</th></tr>
+
+            {% for info in infoarray %}
+
+
+                <tr><td>{{info[0]}}</td><td><a href="/detail/{{info}}">{{info[1]}}</a></td><td>{{info[2]}}元/千克</td><td><a href="/delt/{{info[0]}}">删除</a></td></tr>
+
+			{% endfor %}
+        {% endif %}
+		</ul>
+</table><br><br><br>
+	<a href="/addgoods" style="margin-left: 37.5%;font-size: 18px ;line-height: 30px;" class="btn btn-default">添加数据</a>
+	<a href="/updated" style="font-size: 18px;margin-left: 60px" class="btn btn-default">修改信息</a>
+		<a href="/" style="font-size: 18px;margin-left: 60px" class="btn btn-default">返回首页</a>
+
+
+
+
+
+	</body>
+</html>

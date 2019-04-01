@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>列表页</title>
+	</head>
+	<body>
+		{% if userinfo %}
+		<h1>你好： <small>{{userinfo}}</small></h1>
+		{% endif %}
+		
+		<h1>列表页</h1>
+		
+		<ul>
+			
+			{% for info in infoarray %}
+				<li><a href="/detail/{{info}}">{{info}}</a></li>
+				
+			{% endfor %}
+			
+		</ul>
+		
+		
+		<a href="/">返回</a>
+		
+	</body>
+</html>

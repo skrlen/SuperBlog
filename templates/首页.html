@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+	<head lang="zh-CN">
+		<meta charset="utf-8">
+		<title>BootStrap</title>
+		<style type="text/css">
+			.neirong{
+				margin: 0 auto;
+				position: absolute;
+				margin-top: 100px;
+				
+			}
+			.neirong2{
+				width: 900px;
+				height: 600px;
+				margin-top: 800px;
+				margin-left: 200px;
+				border-right: 1px solid #333;
+			}
+			
+			.neirong3{
+				float: right;
+				width: 550px;
+				height: 600px;
+				margin-right: -600px;
+				margin-top: -550px;
+			}
+			
+			.neirong4{
+				
+				/* width: 1400px;
+				height: 600px;
+				background-color: red; */
+				margin-top: 200px;
+				margin-left: -200px;
+				
+			}
+			.dibu{
+				margin-left: 450px;
+				margin-top: 100px;
+			}
+			
+			.dibu li{
+				float: left;
+				padding-left: 50px;
+				list-style: none;
+				
+			}
+			.dibu li a{
+				color: #ffffff;
+				font-size: 16px;
+			}
+			.dibu li a:hover{
+				color: red;
+			}
+			
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../static/js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script src="../static/js/jqery/jquery-2.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../static/js/bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">乌拉乌拉王</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="#">主页 <span class="sr-only">(current)</span></a></li>
+
+					  {% if userinfo %}
+					  <li><a href="/list">查看列表</a></li>
+					  {% else %}
+					  <li><a href="/login">查看列表</a></li>
+
+					  {% endif %}
+					  <li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">工具箱 <span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+						<li><a href="#">听音乐</a></li>
+						<li><a href="#">看视频</a></li>
+						<li><a href="#">读小说</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">扩展功能</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">磁力搜索器</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				  <form class="navbar-form navbar-left" action="/list" method="get">
+					<div class="form-group">
+					  <input type="text" class="form-control" placeholder="全站搜">
+					</div>
+					<button type="submit" class="btn btn-default">查找</button>
+				  </form>
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a href="http://www.nicetool.net/">另类工具</a></li>
+					<li class="dropdown">
+						{% if userinfo %}
+					  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userinfo}} <span class="caret"></span></a>
+					  	{% else %}
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登录 <span class="caret"></span></a>
+						{% endif %}
+						<ul class="dropdown-menu">
+						  {% if userinfo %}
+							<li><a href="#" title="暂时没有个人信息">{{userinfo}}</a></li>
+							<li><a href="/quit">登出</a></li>
+						  {% else %}
+						  	<li><a href="/login">登录</a></li>
+							<li><a href="/regist">注册</a></li>
+						  {% endif %}
+						<li><a href="/readme">加入我们</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">联系方式</a></li>
+					  </ul>
+					</li>
+				  </ul>
+				</div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+			{% if 1<= res <6 %}
+			
+		<div class="jumbotron" style="background-image: url(../static/images/image-1.jpg);">
+			<!-- --------------------------------------------- -->
+			<div style="margin-left: 400px;">
+			  {%if userinfo%}
+			  <h1 style="padding-top: 100px;">夜深了{{userinfo}}</h1>
+			  {% else %}
+				
+			  <h1 style="padding-top: 100px;">夜深了，早点休息</h1>
+				  {% endif %}
+			  <p>每一天，都是一个新的开始，我们要努力的做自己<br>
+			  不要被世间的纷扰盖住了双眼，所有的努力都应该被善待<br>
+			  我是打不倒的小强<br>
+			  不会轻易服输</p><br><br>
+			  <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">阅读更多</a></p><br><br>
+				<div class="container" style="margin-right:370px;">
+					<p>为何如此优秀<br>
+					因为我们足够专业</p><br>
+					<br>
+				  </div>
+				<div class="collapse" id="collapseExample" style="margin-left: -250px;">
+				  <div class="well" style="padding-left: 300px;">
+					<p>此处本来有内容，不过不慎消失了<br>
+					所以现在没有了<br>
+					<a href="#collapseExample1"aria-controls="collapseExample"data-toggle="collapse" aria-expanded="false" style="font-size: 21px;color: #333333;">真的</a></p>
+					
+					<div class="collapse" id="collapseExample1">
+					  <div class="well">
+						<p>哈哈这都能看出来</p>
+						<p><a href="http://www.mvcat.com" style="color: #333333;">点我点我</a></p>
+					  </div>
+					</div>
+					
+				  </div>
+				</div>
+			  </div> 
+			</div>
+			<!-- ---------------------------------------------- -->
+			{% elif 6<= res <12 %}
+			<div class="jumbotron" style="background-image: url(../static/images/image-2.jpg);">
+				<!-- --------------------------------------------- -->
+				<div style="margin-left: 400px;">
+				  {%if userinfo%}
+				  <h1 style="padding-top: 100px;">早安{{userinfo}}</h1>
+				  {% else %}
+					
+				  <h1 style="padding-top: 100px;">早安世界</h1>
+					  {% endif %}
+				  <p>每一天，都是一个新的开始，我们要努力的做自己<br>
+				  不要被世间的纷扰盖住了双眼，所有的努力都应该被善待<br>
+				  我是打不倒的小强<br>
+				  不会轻易服输</p><br><br>
+				  <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">阅读更多</a></p><br><br>
+					<div class="container" style="margin-right:370px;">
+						<p>为何如此优秀<br>
+						因为我们足够专业</p><br>
+						<br>
+					  </div>
+					<div class="collapse" id="collapseExample" style="margin-left: -250px;">
+					  <div class="well" style="padding-left: 300px;">
+						<p>此处本来有内容，不过不慎消失了<br>
+						所以现在没有了<br>
+						<a href="#collapseExample1"aria-controls="collapseExample"data-toggle="collapse" aria-expanded="false" style="font-size: 21px;color: #333333;">真的</a></p>
+						
+						<div class="collapse" id="collapseExample1">
+						  <div class="well">
+							<p>哈哈这都能看出来</p>
+							<p><a href="http://www.mvcat.com" style="color: #333333;">点我点我</a></p>
+						  </div>
+						</div>
+						
+					  </div>
+					</div>
+				  </div> 
+				</div>
+				<!-- ---------------------------------------------- -->
+			{% elif 12<=res <18 %}
+			<div class="jumbotron" style="background-image: url(../static/images/image-3.jpg);">
+				<!-- --------------------------------------------- -->
+				<div style="margin-left: 400px;">
+				  {%if userinfo%}
+				  <h1 style="padding-top: 100px;">下午好{{userinfo}}</h1>
+				  {% else %}
+					
+				  <h1 style="padding-top: 100px;">下午好，不要太累哦！</h1>
+					  {% endif %}
+				  <p>每一天，都是一个新的开始，我们要努力的做自己<br>
+				  不要被世间的纷扰盖住了双眼，所有的努力都应该被善待<br>
+				  我是打不倒的小强<br>
+				  不会轻易服输</p><br><br>
+				  <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">阅读更多</a></p><br><br>
+					<div class="container" style="margin-right:370px;">
+						<p>为何如此优秀<br>
+						因为我们足够专业</p><br>
+						<br>
+					  </div>
+					<div class="collapse" id="collapseExample" style="margin-left: -250px;">
+					  <div class="well" style="padding-left: 300px;">
+						<p>此处本来有内容，不过不慎消失了<br>
+						所以现在没有了<br>
+						<a href="#collapseExample1"aria-controls="collapseExample"data-toggle="collapse" aria-expanded="false" style="font-size: 21px;color: #333333;">真的</a></p>
+						
+						<div class="collapse" id="collapseExample1">
+						  <div class="well">
+							<p>哈哈这都能看出来</p>
+							<p><a href="http://www.mvcat.com" style="color: #333333;">点我点我</a></p>
+						  </div>
+						</div>
+						
+					  </div>
+					</div>
+				  </div> 
+				</div>
+				<!-- ---------------------------------------------- -->
+				{% else %}
+				<div class="jumbotron" style="background-image: url(../static/images/image-3.jpg);">
+					<!-- --------------------------------------------- -->
+					<div style="margin-left: 400px;">
+					  {%if userinfo%}
+					  <h1 style="padding-top: 100px;">晚上好{{userinfo}}</h1>
+					  {% else %}
+						
+					  <h1 style="padding-top: 100px;">晚上虽好，莫要贪杯</h1>
+						  {% endif %}
+					  <p>每一天，都是一个新的开始，我们要努力的做自己<br>
+					  不要被世间的纷扰盖住了双眼，所有的努力都应该被善待<br>
+					  我是打不倒的小强<br>
+					  不会轻易服输</p><br><br>
+					  <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">阅读更多</a></p><br><br>
+						<div class="container" style="margin-right:370px;">
+							<p>为何如此优秀<br>
+							因为我们足够专业</p><br>
+							<br>
+						  </div>
+						<div class="collapse" id="collapseExample" style="margin-left: -250px;">
+						  <div class="well" style="padding-left: 300px;">
+							<p>此处本来有内容，不过不慎消失了<br>
+							所以现在没有了<br>
+							<a href="#collapseExample1"aria-controls="collapseExample"data-toggle="collapse" aria-expanded="false" style="font-size: 21px;color: #333333;">真的</a></p>
+							
+							<div class="collapse" id="collapseExample1">
+							  <div class="well">
+								<p>哈哈这都能看出来</p>
+								<p><a href="http://www.mvcat.com" style="color: #333333;">点我点我</a></p>
+							  </div>
+							</div>
+							
+						  </div>
+						</div>
+					  </div> 
+					</div>
+					<!-- ---------------------------------------------- -->
+			{% endif %}
+			
+			
+		  
+		
+		
+		<div class="neirong">
+			<h1 style="line-height: 30px;margin-left:800px; font-size: 30px; margin-bottom: 100px;">晨曦的露水</h1>
+		 <div class="row" >
+		  <div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="width: 300px; height: 400px;float: left;position: absolute;margin-left: 200px;">
+			  <img src="../static/images/22.jpg" style="width: 200px;" >
+			  <div class="caption">
+				<h3>何惧冬寒</h3>
+				<p>古有东施效颦<br>
+				今有西施豆腐</p>
+				<p><a href="#" class="btn btn-primary" role="button">关于我们</a> <a href="#" class="btn btn-default" role="button">了解更多</a></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row" >
+		  <div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="width: 300px; height: 400px;float: left; position: absolute;margin-left: 550px;">
+			  <img src="../static/images/11.jpg" style="width: 200px;" >
+			  <div class="caption">
+				<h3>不畏夏暖</h3>
+				<p>我常常因为不够<br>
+				变态而与你们格格不入</p>
+				<p><a href="#" class="btn btn-primary" role="button">关于我们</a> <a href="#" class="btn btn-default" role="button">了解更多</a></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row" >
+		  <div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="width: 300px; height: 400px;float: left;position: absolute;margin-left: 900px;">
+			  <img src="../static/images/123.jpg" style="width: 250px;" >
+			  <div class="caption"><br><br>
+				<h3>管他秋高</h3>
+				<p>四季的风景最是舒爽<br>
+				所以就完蛋了</p>
+				<p><a href="#" class="btn btn-primary" role="button">关于我们</a> <a href="#" class="btn btn-default" role="button">了解更多</a></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row" >
+		  <div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="width: 300px; height: 400px;float: left;position: absolute;margin-left: 1300px;">
+			  <img src="../static/images/3.jpg" style="width: 200px;" >
+			  <div class="caption">
+				<h3>任他春生</h3>
+				<p>春困秋乏<br>
+				夏瞌睡，冬打盹</p>
+				<p><a href="#" class="btn btn-primary" role="button">关于我们</a> <a href="#" class="btn btn-default" role="button">了解更多</a></p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		</div>
+		
+		<div class="neirong2">
+			<h1 style="text-align: center;">夏日</h1>
+			
+			<div class="media">
+			  <div class="media-left media-middle">
+				<a href="#">
+				  <img class="media-object" src="../static/images/blog-image-1.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<h4 class="media-heading"style="font-size: 22px; padding-top: 30px;">清晨的第一缕阳光</h4><br>
+				<p style="font-size: 18px;">清晨的第一缕阳光是明媚的，舒爽的，令人
+				从头舒适到脚的。<br>早晨的阳光，拥有着他自己的魔力，能使人深深的爱上了他。<br>不知从哪一天开始，我就喜欢上了清晨的阳光，<br><br>这缕阳光，照的人生充满希望</p>
+			  </div>
+			</div>
+			
+			<div class="media">
+			  <div class="media-left media-middle">
+				<a href="#">
+				  <img class="media-object" src="../static/images/blog-image-2.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<h4 class="media-heading"style="font-size: 22px; padding-top: 30px;">中午那象征至高权威的阳光</h4><br>
+				<p style="font-size: 18px;">中午的阳光是无情的，它拥有着至高的权威
+				没有人可以不屈服。<br>中午的烈阳，就像那炎炎烈火，直击人的心怀，热的不可思议。<br>仿佛无形之间，恨不得将他那炽热的温度，给与所有的生灵	<br><br>这缕阳光，照的人生繁华如梦</p>
+			  </div>
+			</div>
+			
+			<div class="neirong3">
+				<h1 style="text-align: center;">最美的便是夕阳</h1><br><br>
+				<div style="margin-left: 90px;"><img src="../static/images/blog-image-4.jpg" ></div><br><br>
+				<p style="font-size: 18px; margin-left: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;傍晚的阳光是唯美的，就宛如一个人的暮年。
+				<br>散尽了最后一缕光辉，留给你的，只有温热的余光，<br>	就像你的父母，虽不知却从未缺席，一直在你背后<br><br>这最后一缕夕阳，照尽了人生的悲欢离合</p>
+			</div>
+			
+			
+			
+			<div>
+			<!-- <div  class="neirong4"><img src="images/image-2.jpg" > -->
+				
+				
+			</div>
+			</div>
+		</div>
+		
+		<div style="width: 1100px;margin-left: 400px;margin-top: 100px;">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+				<div class="item active">
+				  <img src="../static/images/image-2.jpg" alt="...">
+				  <div class="carousel-caption">
+					  <div class="carousel-caption">
+						<h3>夏日的晨曦</h3>
+						<p>晨曦是美好的，也是充满希望的一天</p>
+					  </div>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="../static/images/image-4.jpg" alt="...">
+				  <div class="carousel-caption">
+					  <div class="carousel-caption">
+						<h3>夏日的烈阳</h3>
+						<p>烈阳是残酷的，亦是无情的，照的人生疼</p>
+					  </div>
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="../static/images/image-1.jpg" alt="...">
+				  <div class="carousel-caption">
+					  <div class="carousel-caption">
+						<h3>终末之光</h3>
+						<p>夕阳无限好，只是近黄昏</p>
+					  </div>
+				  </div>
+				</div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+		
+		<div style="width: 1100px;height: 800px;margin: 0 auto; border: 1px solid #E5E9EF;">
+			<h1>此处应该有东西,等想起来写什么再说吧</h1>
+
+
+		</div>
+		
+		
+		<div style="width: 100%; height: 300px; background-color: #333333;">
+			<<!-- div style="width: 21%;height: 150px;background-color: #E5E9EF;">
+				<p class="h1">优秀短文小说</p>
+				
+			</div>
+			<div style="width: 21%;height: 150px;background-color: #E5E9EF; margin-left: 1500px; margin-top: -150px;"></div> -->
+			<ul class="dibu">
+				<li><a href="#">返回首页</a></li>
+				<li><a href="https://www.baidu.com">获取更多</a></li>
+				<li><a href="http://www.mvcat.com">看电影</a></li>
+				<li><a href="https://music.163.com/">听音乐</a></li>
+				<li><a href="https://www.qidian.com/">读小说</a></li>
+				<li><a href="https://www.jianshu.com/">学技术</a></li>
+				<li><a href="http://www.zhihu.com">长知识</a></li>
+				<li><a href="http://www.cctv.com">学装逼</a></li>
+			</ul>
+			<br><br>" ><p style="color: #FFFFFF; margin-left: 530px;margin-top: 80px;"><img src="../static/images/7779999.jpg" >&copy;copyright 版权归属网站所有 如有侵权 就当我没说</p>
+		</div>
+		
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

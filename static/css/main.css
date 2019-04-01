@@ -1,0 +1,11 @@
+img{
+	width: 100px;
+	height: 100px;
+}
+
+ul>li{
+	/* float: left; */
+	/* text-align: center; */
+	/* width: 400px; */
+	color: palegreen;
+}
