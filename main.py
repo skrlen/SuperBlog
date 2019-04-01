@@ -27,10 +27,6 @@ def index():
     return render_template('首页.html',userinfo = user,res = res)
 
 
-# @app.route('/news/<int:num>')
-# def news():
-#     return render_template('news.html',pagenews= ['股票又涨了','房价又降了','又要放假了'])
-
 @app.route('/regist',methods=['POST','GET'])
 def regist():
 
@@ -99,9 +95,6 @@ def login():
 def addgoods():
     if request.method=='GET':
         return render_template('addgoods.html')
-
-    # elif request.method=='POST':
-
 
 @app.route('/readme')
 def readme():
